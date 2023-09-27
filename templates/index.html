@@ -1,36 +1,121 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>MAALChain Testnet Faucet</title>
     <style>
-        body {
-            display: flex;
-            justify-content: center; /* Horizontally center the content */
-            align-items: center; /* Vertically center the content */
-            height: 100vh; /* Make the container take up the entire viewport height */
-            margin: 0; /* Remove default margin */
-            background-color: blue; /* Set the background color to blue */
-          }
-          
-          /* Add styles to the content (adjust as needed) */
-          .content {
-            text-align: center; /* Center text horizontally */
-            color: white; /* Text color */
-            padding: 20px; /* Add some padding to the content */
-            border-radius: 5px; /* Rounded corners for the content */
-          }
-          
+      html {
+        font-size: 100% !important;
+        background-color: var(--greyLight-1) !important;
+      }
+
+      @media screen and (max-width: 1536px) {
+        html {
+          font-size: 95% !important;
+        }
+      }
+
+      @media screen and (max-width: 1200px) {
+        html {
+          font-size: 90% !important;
+        }
+      }
+
+      @media screen and (max-width: 1050px) {
+        html {
+          font-size: 85% !important;
+        }
+      }
+
+      @media screen and (max-width: 900px) {
+        html {
+          font-size: 80% !important;
+        }
+      }
+      body,
+      p,
+      img,
+      input {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        /* Remove default margin */
+        /* Set the background color to blue */
+      }
+
+      /* Add styles to the content (adjust as needed) */
+      .content {
+        text-align: center; /* Center text horizontally */
+        color: white; /* Text color */
+        padding: 20px; /* Add some padding to the content */
+        border-radius: 5px; /* Rounded corners for the content */
+      }
+      img {
+        max-width: 100% !important;
+      }
+      .w-4 {
+        width: 4rem !important;
+      }
+      .w-2 {
+        width: 2rem !important;
+      }
+      .d-f {
+        display: flex !important;
+      }
+      .a-i-c {
+        align-items: center !important;
+      }
+      .j-c-c {
+        justify-content: center !important;
+      }
+      .m-r-1 {
+        margin-right: 1rem !important;
+      }
+      .min-w-30 {
+        min-width: 30rem !important;
+      }
+      .h-2 {
+        height: 2rem !important;
+      }
+      .pa-0_5 {
+        padding: 0.5rem !important;
+      }
+      .input,
+      .input:focus {
+        border:1px solid #cccccc !important;
+       outline: none !important;
+      }
+      .m-b-2{
+        margin-bottom: 2rem !important;
+      }
     </style>
-</head>
-<body>
-    <img src="https://bafkreiah7alkt44dlc22kapbqhgg3prqv7h7q6nynq6cf3p2bbttiyjkk4.ipfs.dweb.link/" class="" />
-    <h1>MAALChain Testnet Faucet</h1>
-    <form method="POST" class="content">
-        <label for="user_address">Wallet Address:</label>
-        <input type="text" name="user_address" required><br>
-        <label for="tweet_url">Tweet URL:</label>
-        <input type="text" name="tweet_url" required><br>
-        <input type="submit" value="Claim Tokens">
-    </form>
-</body>
+  </head>
+  <body>
+    <div class="d-f a-i-c j-c-c m-b-2">
+      <div class="m-r-1">
+        <img
+          src="https://bafkreib3je3ee3w44xc4rtacnflgreawtoijm5thzjkytne2a5ggzx5q74.ipfs.nftstorage.link/"
+          class="w-2"
+        />
+      </div>
+      <div class=""><h1>MAAL Chain Testnet Faucet</h1></div>
+    </div>
+    <div class="d-f a-i-c j-c-c w-100">
+      <input
+        type="text"
+        placeholder="Input your  MAAL Chain address..."
+        class="input min-w-30 pa-0_5"
+      />
+
+      <div class=""><button class="input pa-0_5">Claim Token</button></div>
+    </div>
+    <div class=""></div>
+
+    <!-- <form method="POST" class="content">
+      <label for="user_address">Wallet Address:</label>
+      <input type="text" name="user_address" required /><br />
+      <label for="tweet_url">Tweet URL:</label>
+      <input type="text" name="tweet_url" required /><br />
+      <input type="submit" value="Claim Tokens" />
+    </form> -->
+  </body>
 </html>
