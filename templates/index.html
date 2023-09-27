@@ -81,44 +81,74 @@
       }
       .input,
       .input:focus {
-        border:1px solid #cccccc !important;
-       outline: none !important;
+        border: 1px solid #cccccc !important;
+        outline: none !important;
       }
-      .m-b-2{
+      .m-b-2 {
         margin-bottom: 2rem !important;
       }
-      .c-p{
+      .c-p {
         cursor: pointer !important;
+      }
+      .t-a-c {
+        text-align: center !important;
       }
     </style>
   </head>
   <body>
     <div class="d-f a-i-c j-c-c m-b-2">
-      <div class="m-r-1">
-        <img
-          src="https://bafkreib3je3ee3w44xc4rtacnflgreawtoijm5thzjkytne2a5ggzx5q74.ipfs.nftstorage.link/"
-          class="w-2"
-        />
+        <div class="m-r-1">
+          <img
+            src="https://bafkreib3je3ee3w44xc4rtacnflgreawtoijm5thzjkytne2a5ggzx5q74.ipfs.nftstorage.link/"
+            class="w-2"
+          />
+        </div>
+        <div class=""><h1>MAAL Chain Testnet Faucet</h1></div>
       </div>
-      <div class=""><h1>MAAL Chain Testnet Faucet</h1></div>
-    </div>
-    <div class="d-f a-i-c j-c-c w-100">
+    <div class="w-100 t-a-c">
       <input
         type="text"
-        placeholder="Input your  MAAL Chain address..."
-        class="input min-w-30 pa-0_5"
+        id="tweet-url"
+        placeholder="Input your tweet URL..."
+        class="input min-w-30 pa-0_5 m-b-2"
       />
-
-      <div class=""><button class="input pa-0_5 c-p">Claim Token</button></div>
     </div>
-    <div class=""></div>
+    <div class="w-100 t-a-c" id="address-input" style="display: none;">
+      <input
+        type="text"
+        placeholder="Input your MAAL Chain address..."
+        class="input min-w-30 pa-0_5 m-b-2"
+      />
+    </div>
+    <div class="t-a-c">
+      <button class="input pa-0_5 c-p" id="claim-button" disabled>Claim Token</button>
+    </div>
 
-    <!-- <form method="POST" class="content">
-      <label for="user_address">Wallet Address:</label>
-      <input type="text" name="user_address" required /><br />
-      <label for="tweet_url">Tweet URL:</label>
-      <input type="text" name="tweet_url" required /><br />
-      <input type="submit" value="Claim Tokens" />
-    </form> -->
+    <script>
+      const tweetUrlInput = document.getElementById('tweet-url');
+      const addressInput = document.getElementById('address-input');
+      const claimButton = document.getElementById('claim-button');
+
+      tweetUrlInput.addEventListener('input', () => {
+        const tweetUrl = tweetUrlInput.value;
+        if (isValidUrl(tweetUrl)) {
+          addressInput.style.display = 'block';
+          claimButton.disabled = false;
+        } else {
+          addressInput.style.display = 'none';
+          claimButton.disabled = true;
+        }
+      });
+
+      // Function to check if a string is a valid URL (simplified)
+      function isValidUrl(url) {
+        try {
+          new URL(url);
+          return true;
+        } catch (error) {
+          return false;
+        }
+      }
+    </script>
   </body>
 </html>
