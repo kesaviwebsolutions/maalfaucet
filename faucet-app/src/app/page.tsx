@@ -70,7 +70,7 @@ function FaucetPage() {
 	const handleClaim = async () => {
 		try {
 			const response = await fetch(
-				'https://cancellation-reunion-ict-chapter.trycloudflare.com/faucet',
+				'http://68.183.217.191:3033/faucet',
 				{
 					method: 'POST',
 					headers: {
